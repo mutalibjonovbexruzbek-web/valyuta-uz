@@ -1,35 +1,136 @@
 <!DOCTYPE html>
 <html lang="uz">
 <head>
+
     <meta charset="UTF-8">
 
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
-    <title>ValyutaUZ — O'zbekiston valyuta kurslari</title>
+    <!-- =========================
+         GOOGLE / SEO
+    ========================== -->
 
-    <meta name="description"
-          content="ValyutaUZ — O'zbekiston so'miga nisbatan dunyo valyutalarining rasmiy kurslari. Valyutalarni solishtiring, konvertatsiya qiling va kurslar oshishi yoki tushishini kuzating.">
+    <title>
+        ValyutaUZ — Rasmiy valyuta kurslari | Mirahmatov
+    </title>
 
-    <meta name="keywords"
-          content="valyuta, valyuta kurslari, dollar kursi, euro kursi, so'm, UZS, USD, EUR, Markaziy bank, ValyutaUZ">
+    <meta
+        name="description"
+        content="ValyutaUZ — O‘zbekiston Markaziy bankining rasmiy ma'lumotlari asosida valyuta kurslarini O‘zbek so‘mida ko‘rsatadigan sayt. Valyuta konvertori, kurslarning oshishi va tushishi. Sayt yaratuvchisi: Mirahmatov."
+    >
 
-    <meta name="author"
-          content="Mirahmatov">
+    <meta
+        name="keywords"
+        content="valyuta kurslari, dollar kursi, yevro kursi, rubl kursi, valyuta konvertori, O‘zbekiston valyutasi, O‘zbek so‘mi, UZS, USD, EUR, RUB, ValyutaUZ, Mirahmatov"
+    >
 
-    <meta name="robots"
-          content="index, follow">
+    <meta
+        name="author"
+        content="Mirahmatov"
+    >
 
-    <meta property="og:title"
-          content="ValyutaUZ — Rasmiy valyuta kurslari">
+    <meta
+        name="robots"
+        content="index, follow"
+    >
 
-    <meta property="og:description"
-          content="Dunyo valyutalarining O'zbekiston so'midagi rasmiy kurslari.">
+    <meta
+        name="theme-color"
+        content="#2563eb"
+    >
 
-    <meta property="og:type"
-          content="website">
+    <!-- Google / social preview -->
+
+    <meta
+        property="og:title"
+        content="ValyutaUZ — Rasmiy valyuta kurslari"
+    >
+
+    <meta
+        property="og:description"
+        content="O‘zbekiston Markaziy bankining rasmiy ma'lumotlari asosida valyuta kurslari va konvertor."
+    >
+
+    <meta
+        property="og:type"
+        content="website"
+    >
+
+    <meta
+        property="og:site_name"
+        content="ValyutaUZ"
+    >
+
+    <!-- =========================
+         SAYT MA'LUMOTI
+    ========================== -->
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "ValyutaUZ",
+        "description": "O‘zbekiston valyuta kurslari va valyuta konvertori",
+        "author": {
+            "@type": "Person",
+            "name": "Mirahmatov"
+        }
+    }
+    </script>
+
 
     <style>
+
+        /* =========================
+           ASOSIY
+        ========================== */
+
+        :root {
+
+            --bg: #f5f7fb;
+            --card: #ffffff;
+            --text: #111827;
+            --muted: #6b7280;
+            --border: #e5e7eb;
+
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+
+            --green: #16a34a;
+            --green-bg: #dcfce7;
+
+            --red: #dc2626;
+            --red-bg: #fee2e2;
+
+            --shadow:
+                0 10px 35px rgba(15, 23, 42, 0.07);
+
+            --radius: 18px;
+        }
+
+
+        body.dark {
+
+            --bg: #0b1120;
+            --card: #111827;
+            --text: #f9fafb;
+            --muted: #9ca3af;
+            --border: #263244;
+
+            --primary: #60a5fa;
+            --primary-dark: #3b82f6;
+
+            --green: #4ade80;
+            --green-bg: rgba(22, 163, 74, 0.15);
+
+            --red: #f87171;
+            --red-bg: rgba(220, 38, 38, 0.15);
+
+            --shadow:
+                0 10px 35px rgba(0, 0, 0, 0.25);
+        }
+
 
         * {
             margin: 0;
@@ -37,31 +138,14 @@
             box-sizing: border-box;
         }
 
-        :root {
-            --bg: #f5f7fb;
-            --card: #ffffff;
-            --text: #111827;
-            --muted: #667085;
-            --border: #e5e7eb;
-            --primary: #2563eb;
-            --primary-dark: #1d4ed8;
-            --green: #16a34a;
-            --red: #dc2626;
-            --shadow: 0 10px 30px rgba(15, 23, 42, 0.07);
+
+        html {
+            scroll-behavior: smooth;
         }
 
-        body.dark {
-            --bg: #080d1c;
-            --card: #111827;
-            --text: #f8fafc;
-            --muted: #94a3b8;
-            --border: #263244;
-            --primary: #60a5fa;
-            --primary-dark: #3b82f6;
-            --shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-        }
 
         body {
+
             font-family:
                 Inter,
                 Arial,
@@ -70,1198 +154,2481 @@
 
             background: var(--bg);
             color: var(--text);
-            min-height: 100vh;
-            transition: 0.25s;
+
+            transition:
+                background 0.25s ease,
+                color 0.25s ease;
         }
 
-        /* HEADER */
+
+        button,
+        input,
+        select {
+            font-family: inherit;
+        }
+
+
+        button {
+            cursor: pointer;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================== */
 
         header {
+
             position: sticky;
             top: 0;
-            z-index: 100;
 
-            background: var(--card);
-            border-bottom: 1px solid var(--border);
+            z-index: 1000;
 
-            height: 72px;
+            background:
+                rgba(255,255,255,0.9);
 
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+            border-bottom:
+                1px solid var(--border);
 
-            padding: 0 7%;
+            backdrop-filter:
+                blur(15px);
         }
 
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
 
-            font-size: 25px;
+        body.dark header {
+
+            background:
+                rgba(11,17,32,0.9);
+        }
+
+
+        .header-inner {
+
+            width:
+                min(1180px, 92%);
+
+            margin: auto;
+
+            min-height: 72px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 25px;
+        }
+
+
+        .logo {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            text-decoration: none;
+
+            color: var(--text);
+
+            font-size: 23px;
+
             font-weight: 800;
         }
 
+
         .logo-icon {
+
             width: 42px;
             height: 42px;
 
             display: flex;
+
             align-items: center;
             justify-content: center;
 
-            background: var(--primary);
-            color: white;
+            border-radius: 13px;
 
-            border-radius: 12px;
+            background:
+                var(--primary);
+
+            color: white;
 
             font-size: 22px;
         }
 
+
         nav {
+
             display: flex;
+
             align-items: center;
-            gap: 30px;
+
+            gap: 25px;
         }
 
+
         nav a {
-            text-decoration: none;
+
             color: var(--muted);
+
+            text-decoration: none;
+
+            font-size: 14px;
+
             font-weight: 600;
 
             transition: 0.2s;
         }
 
+
         nav a:hover {
-            color: var(--primary);
+
+            color:
+                var(--primary);
         }
 
-        .theme-btn {
-            border: 1px solid var(--border);
-            background: var(--card);
 
-            width: 44px;
-            height: 44px;
-
-            border-radius: 12px;
-
-            cursor: pointer;
-            font-size: 20px;
-        }
-
-        /* HERO */
-
-        .hero {
-            padding: 80px 20px 45px;
-            text-align: center;
-
-            background:
-                radial-gradient(
-                    circle at top,
-                    rgba(37, 99, 235, 0.12),
-                    transparent 55%
-                );
-        }
-
-        .badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 7px;
-
-            background: rgba(37, 99, 235, 0.1);
-            color: var(--primary);
-
-            padding: 9px 16px;
-            border-radius: 999px;
-
-            font-weight: 700;
-            margin-bottom: 25px;
-        }
-
-        .hero h1 {
-            max-width: 900px;
-            margin: auto;
-
-            font-size: clamp(42px, 7vw, 76px);
-            line-height: 1.03;
-
-            font-weight: 900;
-            letter-spacing: -3px;
-        }
-
-        .hero h1 span {
-            color: var(--primary);
-        }
-
-        .hero p {
-            max-width: 780px;
-            margin: 25px auto 0;
-
-            font-size: 18px;
-            line-height: 1.7;
-
-            color: var(--muted);
-        }
-
-        /* CONTAINER */
-
-        .container {
-            width: min(1200px, 92%);
-            margin: auto;
-        }
-
-        /* STATUS */
-
-        .status {
-            background: var(--card);
-            border: 1px solid var(--border);
-
-            border-radius: 16px;
-
-            padding: 16px 20px;
+        .header-actions {
 
             display: flex;
+
             align-items: center;
-            justify-content: space-between;
 
-            gap: 20px;
-
-            box-shadow: var(--shadow);
-        }
-
-        .status-left {
-            display: flex;
-            align-items: center;
             gap: 10px;
         }
 
-        .status-dot {
-            width: 12px;
-            height: 12px;
 
-            background: #22c55e;
-            border-radius: 50%;
+        .icon-button {
 
-            box-shadow:
-                0 0 0 5px rgba(34, 197, 94, 0.12);
-        }
+            width: 42px;
+            height: 42px;
 
-        .status.loading .status-dot {
-            background: #f59e0b;
-        }
-
-        .status.error .status-dot {
-            background: #ef4444;
-        }
-
-        /* STAT CARDS */
-
-        .stats {
-            display: grid;
-
-            grid-template-columns:
-                repeat(4, 1fr);
-
-            gap: 18px;
-
-            margin: 28px 0 55px;
-        }
-
-        .stat {
-            background: var(--card);
-            border: 1px solid var(--border);
-
-            border-radius: 20px;
-
-            padding: 25px;
-
-            box-shadow: var(--shadow);
-        }
-
-        .stat-icon {
-            font-size: 25px;
-            margin-bottom: 18px;
-        }
-
-        .stat-label {
-            color: var(--muted);
-            font-size: 14px;
-            margin-bottom: 8px;
-        }
-
-        .stat-value {
-            font-size: 31px;
-            font-weight: 900;
-        }
-
-        /* SECTION */
-
-        section {
-            margin-bottom: 65px;
-        }
-
-        .section-title {
-            font-size: 30px;
-            margin-bottom: 20px;
-        }
-
-        .section-description {
-            color: var(--muted);
-            margin-bottom: 25px;
-        }
-
-        /* CONVERTER */
-
-        .converter {
-            background: var(--card);
-            border: 1px solid var(--border);
-
-            border-radius: 22px;
-
-            padding: 30px;
-
-            box-shadow: var(--shadow);
-        }
-
-        .converter-grid {
-            display: grid;
-
-            grid-template-columns:
-                1fr 1fr;
-
-            gap: 18px;
-        }
-
-        .field label {
-            display: block;
-            margin-bottom: 8px;
-
-            color: var(--muted);
-            font-size: 14px;
-            font-weight: 600;
-        }
-
-        input,
-        select {
-            width: 100%;
-
-            border: 1px solid var(--border);
-            background: var(--card);
-            color: var(--text);
+            border:
+                1px solid var(--border);
 
             border-radius: 12px;
 
-            padding: 15px;
+            background:
+                var(--card);
 
-            font-size: 16px;
-            outline: none;
+            color:
+                var(--text);
+
+            font-size: 18px;
         }
 
-        input:focus,
-        select:focus {
-            border-color: var(--primary);
+
+        .icon-button:hover {
+
+            border-color:
+                var(--primary);
         }
 
-        .convert-result {
-            margin-top: 25px;
 
-            padding: 20px;
+        /* =========================
+           HERO
+        ========================== */
+
+        .hero {
+
+            padding:
+                75px 20px 55px;
+
+            text-align:
+                center;
 
             background:
-                rgba(37, 99, 235, 0.08);
 
-            border-radius: 15px;
-
-            font-size: 21px;
-            font-weight: 800;
-
-            color: var(--primary);
+                radial-gradient(
+                    circle at top,
+                    rgba(37,99,235,0.14),
+                    transparent 45%
+                );
         }
 
-        /* SEARCH */
+
+        .hero-badge {
+
+            display:
+                inline-flex;
+
+            align-items:
+                center;
+
+            gap: 7px;
+
+            padding:
+                8px 14px;
+
+            border-radius:
+                999px;
+
+            background:
+                rgba(37,99,235,0.1);
+
+            color:
+                var(--primary);
+
+            font-size:
+                13px;
+
+            font-weight:
+                700;
+
+            margin-bottom:
+                18px;
+        }
+
+
+        .hero h1 {
+
+            max-width:
+                900px;
+
+            margin:
+                auto;
+
+            font-size:
+                clamp(34px, 6vw, 62px);
+
+            line-height:
+                1.05;
+
+            letter-spacing:
+                -2px;
+
+            font-weight:
+                900;
+        }
+
+
+        .hero h1 span {
+
+            color:
+                var(--primary);
+        }
+
+
+        .hero p {
+
+            max-width:
+                720px;
+
+            margin:
+                20px auto 0;
+
+            color:
+                var(--muted);
+
+            font-size:
+                17px;
+
+            line-height:
+                1.7;
+        }
+
+
+        /* =========================
+           CONTAINER
+        ========================== */
+
+        .container {
+
+            width:
+                min(1180px, 92%);
+
+            margin:
+                auto;
+        }
+
+
+        /* =========================
+           STATUS
+        ========================== */
+
+        .status {
+
+            margin-bottom:
+                25px;
+
+            padding:
+                14px 18px;
+
+            border:
+                1px solid var(--border);
+
+            border-radius:
+                14px;
+
+            background:
+                var(--card);
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                space-between;
+
+            gap:
+                15px;
+
+            color:
+                var(--muted);
+
+            font-size:
+                13px;
+        }
+
+
+        .status-left {
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            gap:
+                9px;
+        }
+
+
+        .status-dot {
+
+            width:
+                9px;
+
+            height:
+                9px;
+
+            border-radius:
+                50%;
+
+            background:
+                var(--green);
+
+            box-shadow:
+                0 0 0 4px
+                var(--green-bg);
+        }
+
+
+        .status.error .status-dot {
+
+            background:
+                var(--red);
+
+            box-shadow:
+                0 0 0 4px
+                var(--red-bg);
+        }
+
+
+        /* =========================
+           STATISTIKA
+        ========================== */
+
+        .statistics {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                repeat(4,1fr);
+
+            gap:
+                16px;
+
+            margin-bottom:
+                30px;
+        }
+
+
+        .stat-card {
+
+            background:
+                var(--card);
+
+            border:
+                1px solid var(--border);
+
+            border-radius:
+                var(--radius);
+
+            padding:
+                22px;
+
+            box-shadow:
+                var(--shadow);
+
+            transition:
+                transform 0.2s;
+        }
+
+
+        .stat-card:hover {
+
+            transform:
+                translateY(-3px);
+        }
+
+
+        .stat-icon {
+
+            font-size:
+                23px;
+
+            margin-bottom:
+                13px;
+        }
+
+
+        .stat-title {
+
+            color:
+                var(--muted);
+
+            font-size:
+                13px;
+
+            margin-bottom:
+                7px;
+        }
+
+
+        .stat-value {
+
+            font-size:
+                27px;
+
+            font-weight:
+                800;
+        }
+
+
+        /* =========================
+           SECTION
+        ========================== */
+
+        .section {
+
+            margin-bottom:
+                35px;
+        }
+
+
+        .section-title {
+
+            display:
+                flex;
+
+            align-items:
+                end;
+
+            justify-content:
+                space-between;
+
+            gap:
+                20px;
+
+            margin-bottom:
+                16px;
+        }
+
+
+        .section-title h2 {
+
+            font-size:
+                25px;
+        }
+
+
+        .section-title p {
+
+            color:
+                var(--muted);
+
+            font-size:
+                13px;
+        }
+
+
+        /* =========================
+           CONVERTER
+        ========================== */
+
+        .converter {
+
+            background:
+                var(--card);
+
+            border:
+                1px solid var(--border);
+
+            border-radius:
+                22px;
+
+            padding:
+                28px;
+
+            box-shadow:
+                var(--shadow);
+        }
+
+
+        .converter-grid {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                1fr 70px 1fr;
+
+            align-items:
+                end;
+
+            gap:
+                15px;
+        }
+
+
+        .field label {
+
+            display:
+                block;
+
+            margin-bottom:
+                8px;
+
+            font-size:
+                13px;
+
+            font-weight:
+                700;
+
+            color:
+                var(--muted);
+        }
+
+
+        .field input,
+        .field select {
+
+            width:
+                100%;
+
+            padding:
+                16px;
+
+            border:
+                1px solid var(--border);
+
+            border-radius:
+                13px;
+
+            background:
+                var(--bg);
+
+            color:
+                var(--text);
+
+            outline:
+                none;
+
+            font-size:
+                16px;
+        }
+
+
+        .field input:focus,
+        .field select:focus {
+
+            border-color:
+                var(--primary);
+
+            box-shadow:
+                0 0 0 3px
+                rgba(37,99,235,0.1);
+        }
+
+
+        .swap-button {
+
+            width:
+                52px;
+
+            height:
+                52px;
+
+            border:
+                none;
+
+            border-radius:
+                15px;
+
+            background:
+                var(--primary);
+
+            color:
+                white;
+
+            font-size:
+                20px;
+
+            transition:
+                0.2s;
+        }
+
+
+        .swap-button:hover {
+
+            background:
+                var(--primary-dark);
+
+            transform:
+                rotate(180deg);
+        }
+
+
+        .conversion-result {
+
+            margin-top:
+                22px;
+
+            padding:
+                20px;
+
+            border-radius:
+                15px;
+
+            background:
+
+                linear-gradient(
+                    135deg,
+                    rgba(37,99,235,0.1),
+                    rgba(37,99,235,0.03)
+                );
+
+            text-align:
+                center;
+        }
+
+
+        .conversion-result small {
+
+            color:
+                var(--muted);
+        }
+
+
+        .conversion-result strong {
+
+            display:
+                block;
+
+            margin-top:
+                6px;
+
+            color:
+                var(--primary);
+
+            font-size:
+                29px;
+        }
+
+
+        /* =========================
+           TOOLBAR
+        ========================== */
+
+        .toolbar {
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            gap:
+                12px;
+
+            margin-bottom:
+                18px;
+        }
+
 
         .search-box {
-            margin-bottom: 20px;
+
+            flex:
+                1;
+
+            position:
+                relative;
         }
+
+
+        .search-box span {
+
+            position:
+                absolute;
+
+            left:
+                15px;
+
+            top:
+                50%;
+
+            transform:
+                translateY(-50%);
+
+            color:
+                var(--muted);
+        }
+
 
         .search-box input {
-            padding: 17px 20px;
-        }
 
-        /* TABLE */
+            width:
+                100%;
 
-        .table-wrap {
-            background: var(--card);
+            padding:
+                15px 15px 15px 45px;
 
-            border: 1px solid var(--border);
+            border:
+                1px solid var(--border);
 
-            border-radius: 20px;
+            border-radius:
+                13px;
 
-            overflow: hidden;
-
-            box-shadow: var(--shadow);
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        th {
             background:
-                rgba(37, 99, 235, 0.06);
+                var(--card);
 
-            color: var(--muted);
+            color:
+                var(--text);
 
-            text-align: left;
+            outline:
+                none;
 
-            font-size: 13px;
-
-            padding: 17px;
+            font-size:
+                15px;
         }
 
-        td {
-            padding: 17px;
 
-            border-top: 1px solid var(--border);
+        .refresh-button {
 
-            font-size: 15px;
-        }
+            padding:
+                15px 19px;
 
-        tr:hover td {
+            border:
+                1px solid var(--border);
+
+            border-radius:
+                13px;
+
             background:
-                rgba(37, 99, 235, 0.035);
+                var(--card);
+
+            color:
+                var(--text);
+
+            font-weight:
+                700;
         }
+
+
+        .refresh-button:hover {
+
+            border-color:
+                var(--primary);
+
+            color:
+                var(--primary);
+        }
+
+
+        /* =========================
+           CURRENCY GRID
+        ========================== */
+
+        .currency-grid {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                repeat(3,1fr);
+
+            gap:
+                17px;
+        }
+
+
+        .currency-card {
+
+            position:
+                relative;
+
+            background:
+                var(--card);
+
+            border:
+                1px solid var(--border);
+
+            border-radius:
+                18px;
+
+            padding:
+                22px;
+
+            box-shadow:
+                var(--shadow);
+
+            transition:
+                0.2s;
+        }
+
+
+        .currency-card:hover {
+
+            transform:
+                translateY(-4px);
+
+            border-color:
+                rgba(37,99,235,0.45);
+        }
+
+
+        .currency-top {
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                space-between;
+
+            gap:
+                10px;
+
+            margin-bottom:
+                17px;
+        }
+
+
+        .currency-info {
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            gap:
+                12px;
+        }
+
+
+        .currency-flag {
+
+            width:
+                43px;
+
+            height:
+                43px;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            border-radius:
+                12px;
+
+            background:
+                var(--bg);
+
+            font-size:
+                23px;
+        }
+
 
         .currency-code {
-            font-weight: 800;
-            color: var(--primary);
+
+            font-size:
+                18px;
+
+            font-weight:
+                800;
         }
+
 
         .currency-name {
-            font-weight: 650;
+
+            margin-top:
+                3px;
+
+            color:
+                var(--muted);
+
+            font-size:
+                12px;
         }
+
+
+        .favorite {
+
+            border:
+                none;
+
+            background:
+                transparent;
+
+            font-size:
+                20px;
+
+            color:
+                #cbd5e1;
+        }
+
+
+        .favorite.active {
+
+            color:
+                #f59e0b;
+        }
+
 
         .rate {
-            font-weight: 800;
+
+            font-size:
+                24px;
+
+            font-weight:
+                850;
         }
 
-        .up {
-            color: var(--green);
-            font-weight: 800;
+
+        .rate-label {
+
+            margin-top:
+                5px;
+
+            color:
+                var(--muted);
+
+            font-size:
+                12px;
         }
 
-        .down {
-            color: var(--red);
-            font-weight: 800;
+
+        .change {
+
+            display:
+                inline-flex;
+
+            align-items:
+                center;
+
+            gap:
+                5px;
+
+            margin-top:
+                15px;
+
+            padding:
+                6px 9px;
+
+            border-radius:
+                8px;
+
+            font-size:
+                12px;
+
+            font-weight:
+                800;
         }
 
-        .same {
-            color: var(--muted);
-            font-weight: 700;
+
+        .change.up {
+
+            color:
+                var(--green);
+
+            background:
+                var(--green-bg);
         }
 
-        /* LOADING */
 
-        .loading-table {
-            padding: 40px;
-            text-align: center;
-            color: var(--muted);
+        .change.down {
+
+            color:
+                var(--red);
+
+            background:
+                var(--red-bg);
         }
 
-        /* SOURCE */
 
-        .source {
-            background: var(--card);
-            border: 1px solid var(--border);
+        .change.zero {
 
-            border-radius: 20px;
+            color:
+                var(--muted);
 
-            padding: 25px;
-
-            box-shadow: var(--shadow);
+            background:
+                var(--bg);
         }
 
-        .source strong {
-            color: var(--primary);
+
+        .card-footer {
+
+            margin-top:
+                17px;
+
+            padding-top:
+                14px;
+
+            border-top:
+                1px solid var(--border);
+
+            color:
+                var(--muted);
+
+            font-size:
+                11px;
         }
 
-        .source a {
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 700;
+
+        /* =========================
+           LOADING
+        ========================== */
+
+        .loading {
+
+            padding:
+                60px 20px;
+
+            text-align:
+                center;
+
+            color:
+                var(--muted);
         }
 
-        /* FOOTER */
+
+        .loader {
+
+            width:
+                35px;
+
+            height:
+                35px;
+
+            margin:
+                0 auto 15px;
+
+            border:
+                4px solid var(--border);
+
+            border-top-color:
+                var(--primary);
+
+            border-radius:
+                50%;
+
+            animation:
+                spin 0.8s linear infinite;
+        }
+
+
+        @keyframes spin {
+
+            to {
+                transform:
+                    rotate(360deg);
+            }
+        }
+
+
+        .empty {
+
+            padding:
+                50px 20px;
+
+            text-align:
+                center;
+
+            color:
+                var(--muted);
+
+            background:
+                var(--card);
+
+            border:
+                1px solid var(--border);
+
+            border-radius:
+                18px;
+        }
+
+
+        /* =========================
+           SOURCE
+        ========================== */
+
+        .source-box {
+
+            padding:
+                25px;
+
+            background:
+                var(--card);
+
+            border:
+                1px solid var(--border);
+
+            border-radius:
+                18px;
+
+            box-shadow:
+                var(--shadow);
+
+            margin-bottom:
+                45px;
+        }
+
+
+        .source-title {
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            gap:
+                10px;
+
+            font-weight:
+                800;
+
+            margin-bottom:
+                10px;
+        }
+
+
+        .source-box p {
+
+            color:
+                var(--muted);
+
+            line-height:
+                1.7;
+
+            font-size:
+                13px;
+        }
+
+
+        .source-box a {
+
+            color:
+                var(--primary);
+
+            font-weight:
+                700;
+        }
+
+
+        /* =========================
+           AUTHOR
+        ========================== */
+
+        .author-box {
+
+            margin-top:
+                18px;
+
+            padding:
+                18px;
+
+            border:
+                1px solid
+                rgba(96,165,250,0.25);
+
+            border-radius:
+                15px;
+
+            background:
+                rgba(37,99,235,0.08);
+
+            text-align:
+                center;
+        }
+
+
+        .author-box strong {
+
+            color:
+                var(--primary);
+
+            font-size:
+                17px;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================== */
 
         footer {
-            border-top: 1px solid var(--border);
 
-            padding: 35px 20px;
+            padding:
+                40px 20px;
 
-            text-align: center;
+            background:
+                #0f172a;
 
-            color: var(--muted);
+            color:
+                white;
 
-            background: var(--card);
+            text-align:
+                center;
         }
 
-        footer strong {
-            color: var(--text);
+
+        .footer-logo {
+
+            font-size:
+                22px;
+
+            font-weight:
+                800;
+
+            margin-bottom:
+                10px;
         }
 
-        /* MOBILE */
 
-        @media (max-width: 850px) {
+        footer p {
 
-            header {
-                padding: 0 4%;
-            }
+            color:
+                #94a3b8;
 
-            nav {
-                gap: 13px;
-            }
+            font-size:
+                13px;
 
-            nav a {
-                display: none;
-            }
+            line-height:
+                1.7;
+        }
 
-            .stats {
+
+        .creator {
+
+            margin-top:
+                12px;
+
+            font-size:
+                14px;
+
+            color:
+                #cbd5e1;
+        }
+
+
+        .creator strong {
+
+            color:
+                #60a5fa;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================== */
+
+        @media (max-width:950px) {
+
+            .statistics {
+
                 grid-template-columns:
-                    repeat(2, 1fr);
+                    repeat(2,1fr);
             }
+
+
+            .currency-grid {
+
+                grid-template-columns:
+                    repeat(2,1fr);
+            }
+
 
             .converter-grid {
-                grid-template-columns: 1fr;
+
+                grid-template-columns:
+                    1fr;
             }
 
-            .hero {
-                padding-top: 60px;
-            }
 
-            .hero h1 {
-                letter-spacing: -2px;
-            }
+            .swap-button {
 
+                width:
+                    100%;
+            }
         }
 
-        @media (max-width: 600px) {
 
-            .stats {
-                grid-template-columns: 1fr;
+        @media (max-width:650px) {
+
+            .header-inner {
+
+                min-height:
+                    65px;
             }
 
-            .status {
-                flex-direction: column;
-                align-items: flex-start;
+
+            nav {
+
+                display:
+                    none;
             }
 
-            .table-wrap {
-                overflow-x: auto;
+
+            .hero {
+
+                padding-top:
+                    55px;
             }
 
-            table {
-                min-width: 750px;
+
+            .hero h1 {
+
+                letter-spacing:
+                    -1px;
             }
+
+
+            .statistics {
+
+                grid-template-columns:
+                    1fr 1fr;
+            }
+
+
+            .currency-grid {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+
+            .toolbar {
+
+                flex-direction:
+                    column;
+
+                align-items:
+                    stretch;
+            }
+
+
+            .refresh-button {
+
+                width:
+                    100%;
+            }
+
 
             .converter {
-                padding: 20px;
+
+                padding:
+                    20px;
             }
 
+
+            .section-title {
+
+                display:
+                    block;
+            }
+
+
+            .section-title p {
+
+                margin-top:
+                    6px;
+            }
+        }
+
+
+        @media (max-width:430px) {
+
+            .statistics {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+
+            .logo-text {
+
+                display:
+                    none;
+            }
+
+
+            .hero h1 {
+
+                font-size:
+                    36px;
+            }
         }
 
     </style>
+
 </head>
+
 
 <body>
 
-<!-- HEADER -->
+
+<!-- =========================
+     HEADER
+========================== -->
 
 <header>
 
-    <div class="logo">
+    <div class="header-inner">
 
-        <div class="logo-icon">
-            ₿
-        </div>
+        <a
+            class="logo"
+            href="#"
+        >
 
-        <div>
-            ValyutaUZ
+            <span class="logo-icon">
+                ₿
+            </span>
+
+            <span class="logo-text">
+                ValyutaUZ
+            </span>
+
+        </a>
+
+
+        <nav>
+
+            <a href="#converter">
+                Konvertor
+            </a>
+
+            <a href="#currencies">
+                Valyutalar
+            </a>
+
+            <a href="#source">
+                Manba
+            </a>
+
+        </nav>
+
+
+        <div class="header-actions">
+
+            <button
+                class="icon-button"
+                id="themeButton"
+                title="Tungi rejim"
+                aria-label="Tungi rejim"
+            >
+                🌙
+            </button>
+
         </div>
 
     </div>
-
-    <nav>
-
-        <a href="#converter">
-            Konvertor
-        </a>
-
-        <a href="#currencies">
-            Valyutalar
-        </a>
-
-        <a href="#source">
-            Manba
-        </a>
-
-        <button
-            class="theme-btn"
-            onclick="toggleTheme()"
-            id="themeButton">
-            🌙
-        </button>
-
-    </nav>
 
 </header>
 
 
-<!-- HERO -->
 
-<div class="hero">
+<!-- =========================
+     HERO
+========================== -->
 
-    <div class="badge">
+<section class="hero">
+
+    <div class="hero-badge">
+
         🏦 Rasmiy kurslar
+
     </div>
 
+
     <h1>
+
         Dunyo valyutalari
-        <br>
-        <span>O‘zbekiston so‘mida</span>
+
+        <span>
+            O‘zbekiston so‘mida
+        </span>
+
     </h1>
 
+
     <p>
-        Dunyo valyutalarining O‘zbekiston so‘miga
-        nisbatan rasmiy kurslarini kuzating,
-        istalgan valyutani so‘mga aylantiring
-        va kurslarning oshishi yoki tushishini ko‘ring.
+
+        Valyuta kurslarini kuzating,
+        istalgan valyutani so‘mga
+        aylantiring va kurslarning
+        oshishi yoki tushishini ko‘ring.
+
     </p>
 
-</div>
+</section>
+
 
 
 <main class="container">
 
 
-    <!-- STATUS -->
+<!-- =========================
+     STATUS
+========================== -->
 
-    <div
-        class="status loading"
-        id="status">
+<div
+    class="status"
+    id="status"
+>
 
-        <div class="status-left">
+    <div class="status-left">
 
-            <div class="status-dot"></div>
+        <span class="status-dot"></span>
 
-            <span id="statusText">
-                Rasmiy kurslar yuklanmoqda...
-            </span>
+        <span id="statusText">
+            Kurslar yuklanmoqda...
+        </span>
 
+    </div>
+
+
+    <span id="updateTime">
+        —
+    </span>
+
+</div>
+
+
+
+<!-- =========================
+     STATISTICS
+========================== -->
+
+<section class="statistics">
+
+
+    <div class="stat-card">
+
+        <div class="stat-icon">
+            🌍
         </div>
 
-        <div id="updateDate">
-            Yuklanmoqda...
+        <div class="stat-title">
+            Valyutalar
+        </div>
+
+        <div
+            class="stat-value"
+            id="totalCurrencies"
+        >
+            —
         </div>
 
     </div>
 
 
-    <!-- STATISTICS -->
 
-    <div class="stats">
+    <div class="stat-card">
 
-        <div class="stat">
-
-            <div class="stat-icon">
-                🌍
-            </div>
-
-            <div class="stat-label">
-                Valyutalar
-            </div>
-
-            <div
-                class="stat-value"
-                id="totalCurrencies">
-                —
-            </div>
-
+        <div class="stat-icon">
+            📈
         </div>
 
-
-        <div class="stat">
-
-            <div class="stat-icon">
-                📈
-            </div>
-
-            <div class="stat-label">
-                Bugun oshgan
-            </div>
-
-            <div
-                class="stat-value"
-                id="upCurrencies">
-                —
-            </div>
-
+        <div class="stat-title">
+            Bugun oshgan
         </div>
 
-
-        <div class="stat">
-
-            <div class="stat-icon">
-                📉
-            </div>
-
-            <div class="stat-label">
-                Bugun tushgan
-            </div>
-
-            <div
-                class="stat-value"
-                id="downCurrencies">
-                —
-            </div>
-
+        <div
+            class="stat-value"
+            id="upCount"
+        >
+            —
         </div>
 
+    </div>
 
-        <div class="stat">
 
-            <div class="stat-icon">
-                🇺🇿
-            </div>
 
-            <div class="stat-label">
-                Asosiy valyuta
-            </div>
+    <div class="stat-card">
 
-            <div class="stat-value">
-                UZS
-            </div>
+        <div class="stat-icon">
+            📉
+        </div>
+
+        <div class="stat-title">
+            Bugun tushgan
+        </div>
+
+        <div
+            class="stat-value"
+            id="downCount"
+        >
+            —
+        </div>
+
+    </div>
+
+
+
+    <div class="stat-card">
+
+        <div class="stat-icon">
+            🇺🇿
+        </div>
+
+        <div class="stat-title">
+            Asosiy valyuta
+        </div>
+
+        <div class="stat-value">
+            UZS
+        </div>
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================
+     CONVERTER
+========================== -->
+
+<section
+    class="section"
+    id="converter"
+>
+
+    <div class="section-title">
+
+        <div>
+
+            <h2>
+                💱 Valyuta konvertori
+            </h2>
+
+            <p>
+                Rasmiy kurslar asosida hisoblanadi
+            </p>
 
         </div>
 
     </div>
 
 
-    <!-- CONVERTER -->
 
-    <section id="converter">
-
-        <h2 class="section-title">
-            💱 Valyuta konvertori
-        </h2>
-
-        <p class="section-description">
-            Valyutani tanlang va qiymatni O‘zbekiston
-            so‘miga hisoblang.
-        </p>
+    <div class="converter">
 
 
-        <div class="converter">
-
-            <div class="converter-grid">
+        <div class="converter-grid">
 
 
-                <div class="field">
+            <div class="field">
 
-                    <label>
-                        Miqdor
-                    </label>
+                <label for="amount">
+                    Miqdor
+                </label>
 
-                    <input
-                        type="number"
-                        id="amount"
-                        value="1"
-                        min="0"
-                        step="any"
-                        oninput="convertCurrency()">
-
-                </div>
-
-
-                <div class="field">
-
-                    <label>
-                        Valyuta
-                    </label>
-
-                    <select
-                        id="currencySelect"
-                        onchange="convertCurrency()">
-                    </select>
-
-                </div>
+                <input
+                    id="amount"
+                    type="number"
+                    value="1"
+                    min="0"
+                    step="any"
+                    placeholder="Miqdor"
+                >
 
             </div>
 
 
-            <div
-                class="convert-result"
-                id="convertResult">
 
-                Kurslar yuklanmoqda...
+            <button
+                class="swap-button"
+                id="swapButton"
+                title="Valyutalarni almashtirish"
+            >
+                ⇄
+            </button>
+
+
+
+            <div class="field">
+
+                <label for="fromCurrency">
+                    Qaysi valyutadan
+                </label>
+
+                <select
+                    id="fromCurrency"
+                >
+
+                    <option value="USD">
+                        USD — AQSh dollari
+                    </option>
+
+                </select>
 
             </div>
+
 
         </div>
 
-    </section>
 
 
-    <!-- CURRENCIES -->
+        <div
+            style="
+                margin-top:15px;
+                text-align:center;
+                color:var(--muted);
+                font-size:13px;
+            "
+        >
 
-    <section id="currencies">
+            ↓ natija ↓
 
-        <h2 class="section-title">
-            🌍 Valyuta kurslari
-        </h2>
+        </div>
 
-        <p class="section-description">
-            Markaziy bankning rasmiy kurslari.
-            Yashil — kurs oshgan, qizil — kurs tushgan.
-        </p>
+
+
+        <div
+            class="field"
+            style="margin-top:12px;"
+        >
+
+            <label for="toCurrency">
+                Qaysi valyutaga
+            </label>
+
+            <select
+                id="toCurrency"
+            >
+
+                <option value="UZS">
+                    UZS — O‘zbekiston so‘mi
+                </option>
+
+            </select>
+
+        </div>
+
+
+
+        <div class="conversion-result">
+
+            <small id="conversionText">
+                Hisoblanmoqda...
+            </small>
+
+            <strong id="conversionResult">
+                —
+            </strong>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     CURRENCIES
+========================== -->
+
+<section
+    class="section"
+    id="currencies"
+>
+
+
+    <div class="section-title">
+
+        <div>
+
+            <h2>
+                🌍 Valyuta kurslari
+            </h2>
+
+            <p>
+                O‘zbekiston so‘miga nisbatan
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="toolbar">
 
 
         <div class="search-box">
 
+            <span>
+                🔎
+            </span>
+
             <input
-                type="search"
-                id="search"
-                placeholder="🔎 Valyutani qidiring: USD, dollar, EUR..."
-                oninput="renderCurrencies()">
+                id="searchInput"
+                type="text"
+                placeholder="Valyutani qidiring... masalan USD, dollar, yevro"
+            >
 
         </div>
 
 
-        <div class="table-wrap">
 
-            <table>
+        <button
+            class="refresh-button"
+            id="refreshButton"
+        >
 
-                <thead>
+            🔄 Yangilash
 
-                    <tr>
-
-                        <th>
-                            Valyuta
-                        </th>
-
-                        <th>
-                            Nomi
-                        </th>
-
-                        <th>
-                            Nominal
-                        </th>
-
-                        <th>
-                            1 birlik kursi
-                        </th>
-
-                        <th>
-                            O‘zgarish
-                        </th>
-
-                        <th>
-                            Holat
-                        </th>
-
-                    </tr>
-
-                </thead>
-
-                <tbody id="currencyTable">
-
-                    <tr>
-
-                        <td
-                            colspan="6"
-                            class="loading-table">
-
-                            Rasmiy valyuta kurslari
-                            yuklanmoqda...
-
-                        </td>
-
-                    </tr>
-
-                </tbody>
-
-            </table>
-
-        </div>
-
-    </section>
+        </button>
 
 
-    <!-- SOURCE -->
+    </div>
 
-    <section id="source">
 
-        <h2 class="section-title">
-            🏦 Ma'lumot manbasi
-        </h2>
 
-        <div class="source">
+    <div
+        id="currencyContainer"
+        class="currency-grid"
+    >
+
+        <div
+            class="loading"
+            style="grid-column:1/-1;"
+        >
+
+            <div class="loader"></div>
 
             <p>
-
-                ValyutaUZ valyuta kurslarini
-                <strong>
-                    O‘zbekiston Respublikasi Markaziy banki
-                </strong>
-                tomonidan taqdim etiladigan rasmiy
-                ma'lumotlardan oladi.
-
-            </p>
-
-            <br>
-
-            <p>
-
-                Rasmiy manba:
-
-                <a
-                    href="https://cbu.uz/uz/arkhiv-kursov-valyut/"
-                    target="_blank"
-                    rel="noopener noreferrer">
-
-                    cbu.uz
-
-                </a>
-
-            </p>
-
-            <br>
-
-            <p>
-
-                Kurs ma'lumotlari avtomatik ravishda
-                Markaziy bankning JSON xizmati orqali
-                yuklanadi.
-
+                Markaziy bank ma'lumotlari yuklanmoqda...
             </p>
 
         </div>
 
-    </section>
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================
+     SOURCE
+========================== -->
+
+<section
+    id="source"
+    class="source-box"
+>
+
+
+    <div class="source-title">
+
+        🏦 Rasmiy ma'lumot manbasi
+
+    </div>
+
+
+    <p>
+
+        Ushbu saytdagi valyuta kurslari
+        O‘zbekiston Respublikasi Markaziy bankining
+        rasmiy valyuta kurslari ma'lumotlaridan olinadi.
+
+        Kurslar saytda avtomatik ravishda yangilanadi.
+
+    </p>
+
+
+    <br>
+
+
+    <p>
+
+        Rasmiy manba:
+
+        <a
+            href="https://cbu.uz/uz/arkhiv-kursov-valyut/json/"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            O‘zbekiston Markaziy banki
+        </a>
+
+    </p>
+
+
+
+    <div class="author-box">
+
+        👨‍💻
+
+        <strong>
+            Sayt yaratuvchisi: Mirahmatov
+        </strong>
+
+        <br>
+
+        <span
+            style="
+                color:var(--muted);
+                font-size:13px;
+            "
+        >
+            ValyutaUZ loyihasi
+        </span>
+
+    </div>
+
+
+</section>
 
 
 </main>
 
 
-<!-- FOOTER -->
+
+<!-- =========================
+     FOOTER
+========================== -->
 
 <footer>
 
+
+    <div class="footer-logo">
+
+        💱 ValyutaUZ
+
+    </div>
+
+
     <p>
-        © <span id="year"></span>
-        <strong>ValyutaUZ</strong>
+
+        O‘zbekiston so‘mida
+        valyuta kurslarini
+        kuzatish platformasi.
+
     </p>
 
-    <p style="margin-top: 8px;">
-        Rasmiy valyuta kurslari asosida ishlaydi.
+
+    <p class="creator">
+
+        Sayt yaratuvchisi:
+
+        <strong>
+            Mirahmatov
+        </strong>
+
     </p>
 
-    <p style="margin-top: 12px;">
-        👨‍💻 Sayt yaratuvchisi:
-        <strong>Mirahmatov</strong>
+
+    <p style="margin-top:12px;">
+
+        © 2026 ValyutaUZ
+
     </p>
+
 
 </footer>
 
 
+
 <script>
 
-    /*
-        ============================================
-        VALYUTAUZ
-        Rasmiy valyuta kurslari
-        Manba: O‘zbekiston Respublikasi
-        Markaziy banki
-        ============================================
-    */
+
+/* =====================================================
+   VALYUTAUZ
+   O'ZBEKISTON MARKAZIY BANKI RASMIY JSON API
+===================================================== */
 
 
-    const API =
-        "https://cbu.uz/uz/arkhiv-kursov-valyut/json/";
+const API_URL =
+    "https://cbu.uz/uz/arkhiv-kursov-valyut/json/";
 
 
-    let currencies = [];
+
+/* =========================
+   O'ZGARUVCHILAR
+========================== */
 
 
-    /*
-        SAHIFA YILI
-    */
-
-    document.getElementById("year").textContent =
-        new Date().getFullYear();
+let currencies = [];
 
 
-    /*
-        VALYUTA NOMLARINI OLISH
-    */
+let favorites =
+    JSON.parse(
+        localStorage.getItem(
+            "valyutaFavorites"
+        ) || "[]"
+    );
 
-    function getName(item) {
 
-        return (
-            item.CcyNm_UZ ||
-            item.CcyNm_EN ||
-            item.CcyNm_RU ||
-            item.Ccy
+
+/* =========================
+   ELEMENTLAR
+========================== */
+
+
+const currencyContainer =
+    document.getElementById(
+        "currencyContainer"
+    );
+
+
+const searchInput =
+    document.getElementById(
+        "searchInput"
+    );
+
+
+const refreshButton =
+    document.getElementById(
+        "refreshButton"
+    );
+
+
+const amountInput =
+    document.getElementById(
+        "amount"
+    );
+
+
+const fromCurrency =
+    document.getElementById(
+        "fromCurrency"
+    );
+
+
+const toCurrency =
+    document.getElementById(
+        "toCurrency"
+    );
+
+
+const conversionResult =
+    document.getElementById(
+        "conversionResult"
+    );
+
+
+const conversionText =
+    document.getElementById(
+        "conversionText"
+    );
+
+
+const status =
+    document.getElementById(
+        "status"
+    );
+
+
+const statusText =
+    document.getElementById(
+        "statusText"
+    );
+
+
+const updateTime =
+    document.getElementById(
+        "updateTime"
+    );
+
+
+
+/* =========================
+   BAYROQLAR
+========================== */
+
+
+const flags = {
+
+    USD: "🇺🇸",
+    EUR: "🇪🇺",
+    RUB: "🇷🇺",
+    GBP: "🇬🇧",
+    JPY: "🇯🇵",
+    CNY: "🇨🇳",
+    CHF: "🇨🇭",
+    TRY: "🇹🇷",
+    KZT: "🇰🇿",
+    AED: "🇦🇪",
+    SAR: "🇸🇦",
+    KRW: "🇰🇷",
+    CAD: "🇨🇦",
+    AUD: "🇦🇺",
+    PLN: "🇵🇱",
+    SEK: "🇸🇪",
+    NOK: "🇳🇴",
+    DKK: "🇩🇰",
+    CZK: "🇨🇿",
+    UAH: "🇺🇦",
+    GEL: "🇬🇪",
+    AZN: "🇦🇿",
+    BYN: "🇧🇾",
+    TJS: "🇹🇯",
+    KGS: "🇰🇬",
+    TMT: "🇹🇲",
+    INR: "🇮🇳",
+    MYR: "🇲🇾",
+    SGD: "🇸🇬",
+    THB: "🇹🇭",
+    HKD: "🇭🇰",
+    ILS: "🇮🇱",
+    EGP: "🇪🇬",
+    BGN: "🇧🇬",
+    RON: "🇷🇴",
+    HUF: "🇭🇺",
+    PLN: "🇵🇱",
+    BRL: "🇧🇷",
+    MXN: "🇲🇽"
+};
+
+
+
+/* =========================
+   SON FORMAT
+========================== */
+
+
+function formatNumber(
+    number,
+    maximum = 2
+) {
+
+    return new Intl.NumberFormat(
+        "uz-UZ",
+        {
+            minimumFractionDigits: 0,
+            maximumFractionDigits: maximum
+        }
+    ).format(number);
+
+}
+
+
+
+/* =========================
+   API DAN MA'LUMOT OLISH
+========================== */
+
+
+async function loadCurrencies() {
+
+    setLoading();
+
+
+    try {
+
+        const response =
+            await fetch(
+                API_URL +
+                "?t=" +
+                Date.now()
+            );
+
+
+        if (!response.ok) {
+
+            throw new Error(
+                "API javob bermadi"
+            );
+
+        }
+
+
+        const data =
+            await response.json();
+
+
+        if (
+            !Array.isArray(data) ||
+            data.length === 0
+        ) {
+
+            throw new Error(
+                "Valyuta ma'lumotlari topilmadi"
+            );
+
+        }
+
+
+        currencies =
+            data.map(
+                item => ({
+
+                    id:
+                        item.id,
+
+                    code:
+                        item.Ccy,
+
+                    name:
+                        item.CcyNm_UZ ||
+                        item.CcyNm_EN ||
+                        item.Ccy,
+
+                    nominal:
+                        Number(
+                            item.Nominal
+                        ) || 1,
+
+                    rate:
+                        Number(
+                            String(
+                                item.Rate
+                            ).replace(
+                                ",",
+                                "."
+                            )
+                        ) || 0,
+
+                    diff:
+                        Number(
+                            String(
+                                item.Diff
+                            ).replace(
+                                ",",
+                                "."
+                            )
+                        ) || 0,
+
+                    date:
+                        item.Date
+
+                })
+            );
+
+
+        renderCurrencySelectors();
+
+        renderCurrencies(
+            searchInput.value
         );
 
-    }
+        updateStatistics();
+
+        calculateConversion();
 
 
-    /*
-        RAQAMNI FORMATLASH
-    */
+        if (
+            currencies.length > 0
+        ) {
 
-    function formatNumber(number) {
+            const date =
+                currencies[0].date ||
+                "—";
 
-        return new Intl.NumberFormat(
-            "uz-UZ",
-            {
-                minimumFractionDigits: 2,
-                maximumFractionDigits: 2
-            }
-        ).format(number);
-
-    }
-
-
-    /*
-        API DAN MA'LUMOT OLISH
-    */
-
-    async function loadCurrencies() {
-
-        const status =
-            document.getElementById("status");
-
-        const statusText =
-            document.getElementById("statusText");
-
-        try {
-
-            status.classList.add("loading");
-            status.classList.remove("error");
-
-            statusText.textContent =
-                "Rasmiy kurslar yuklanmoqda...";
-
-
-            const response =
-                await fetch(API);
-
-
-            if (!response.ok) {
-
-                throw new Error(
-                    "Ma'lumot yuklanmadi"
-                );
-
-            }
-
-
-            const data =
-                await response.json();
-
-
-            if (!Array.isArray(data)) {
-
-                throw new Error(
-                    "Noto‘g‘ri ma'lumot"
-                );
-
-            }
-
-
-            currencies =
-                data.map(item => {
-
-                    const nominal =
-                        Number(item.Nominal) || 1;
-
-                    const rate =
-                        Number(
-                            String(item.Rate)
-                                .replace(",", ".")
-                        ) || 0;
-
-                    const diff =
-                        Number(
-                            String(item.Diff)
-                                .replace(",", ".")
-                        ) || 0;
-
-
-                    return {
-
-                        code:
-                            item.Ccy || "",
-
-                        name:
-                            getName(item),
-
-                        nominal:
-                            nominal,
-
-                        rate:
-                            rate,
-
-                        diff:
-                            diff,
-
-                        date:
-                            item.Date || ""
-
-                    };
-
-                });
-
-
-            /*
-                STATISTIKA
-            */
-
-            const up =
-                currencies.filter(
-                    item => item.diff > 0
-                ).length;
-
-
-            const down =
-                currencies.filter(
-                    item => item.diff < 0
-                ).length;
-
-
-            document.getElementById(
-                "totalCurrencies"
-            ).textContent =
-                currencies.length;
-
-
-            document.getElementById(
-                "upCurrencies"
-            ).textContent =
-                up;
-
-
-            document.getElementById(
-                "downCurrencies"
-            ).textContent =
-                down;
-
-
-            /*
-                STATUS
-            */
-
-            status.classList.remove("loading");
-            status.classList.remove("error");
 
             statusText.textContent =
                 "Rasmiy kurslar muvaffaqiyatli yuklandi";
 
 
-            if (currencies.length > 0) {
-
-                document.getElementById(
-                    "updateDate"
-                ).textContent =
-                    "Kurs sanasi: " +
-                    currencies[0].date;
-
-            }
+            updateTime.textContent =
+                "Kurs sanasi: " +
+                date;
 
 
-            /*
-                SELECT
-            */
-
-            fillCurrencySelect();
-
-
-            /*
-                JADVAL
-            */
-
-            renderCurrencies();
-
-
-            /*
-                KONVERTOR
-            */
-
-            convertCurrency();
-
-
-        } catch (error) {
-
-            console.error(error);
-
-            status.classList.remove("loading");
-            status.classList.add("error");
-
-            statusText.textContent =
-                "Kurslarni yuklashda xatolik yuz berdi";
-
-
-            document.getElementById(
-                "updateDate"
-            ).textContent =
-                "Internet aloqasini tekshiring";
-
-
-            document.getElementById(
-                "currencyTable"
-            ).innerHTML = `
-
-                <tr>
-
-                    <td
-                        colspan="6"
-                        class="loading-table">
-
-                        ❌ Rasmiy kurslarni yuklab bo‘lmadi.
-
-                        <br><br>
-
-                        Sahifani yangilang.
-
-                    </td>
-
-                </tr>
-
-            `;
+            status.classList.remove(
+                "error"
+            );
 
         }
 
+
+    } catch (error) {
+
+        console.error(
+            error
+        );
+
+        setError();
+
     }
 
-
-    /*
-        KONVERTER SELECT
-    */
-
-    function fillCurrencySelect() {
-
-        const select =
-            document.getElementById(
-                "currencySelect"
-            );
+}
 
 
-        select.innerHTML = "";
+
+/* =========================
+   LOADING
+========================== */
 
 
-        currencies.forEach(item => {
+function setLoading() {
+
+
+    statusText.textContent =
+        "Kurslar yuklanmoqda...";
+
+
+    updateTime.textContent =
+        "Iltimos, kuting";
+
+
+    status.classList.remove(
+        "error"
+    );
+
+
+    currencyContainer.innerHTML = `
+
+        <div
+            class="loading"
+            style="grid-column:1/-1;"
+        >
+
+            <div class="loader"></div>
+
+            <p>
+                Markaziy bank ma'lumotlari yuklanmoqda...
+            </p>
+
+        </div>
+
+    `;
+
+}
+
+
+
+/* =========================
+   ERROR
+========================== */
+
+
+function setError() {
+
+
+    status.classList.add(
+        "error"
+    );
+
+
+    statusText.textContent =
+        "Ma'lumotlarni yuklashda xatolik";
+
+
+    updateTime.textContent =
+        "Internet aloqasini tekshiring";
+
+
+    currencyContainer.innerHTML = `
+
+        <div
+            class="empty"
+            style="grid-column:1/-1;"
+        >
+
+            <div
+                style="
+                    font-size:40px;
+                    margin-bottom:12px;
+                "
+            >
+                ⚠️
+            </div>
+
+            <h3>
+                Kurslarni yuklab bo‘lmadi
+            </h3>
+
+            <p
+                style="margin-top:8px;"
+            >
+                Internet aloqasini tekshiring
+                va "Yangilash" tugmasini bosing.
+            </p>
+
+        </div>
+
+    `;
+
+}
+
+
+
+/* =========================
+   SELECTLAR
+========================== */
+
+
+function renderCurrencySelectors() {
+
+
+    const currentFrom =
+        fromCurrency.value ||
+        "USD";
+
+
+    const currentTo =
+        toCurrency.value ||
+        "UZS";
+
+
+    fromCurrency.innerHTML =
+        "";
+
+
+    const uzsFrom =
+        document.createElement(
+            "option"
+        );
+
+
+    uzsFrom.value =
+        "UZS";
+
+
+    uzsFrom.textContent =
+        "UZS — O‘zbekiston so‘mi";
+
+
+    fromCurrency.appendChild(
+        uzsFrom
+    );
+
+
+    currencies.forEach(
+        currency => {
 
             const option =
                 document.createElement(
@@ -1270,358 +2637,848 @@
 
 
             option.value =
-                item.code;
+                currency.code;
 
 
             option.textContent =
-                item.code +
-                " — " +
-                item.name;
+                `${currency.code} — ${currency.name}`;
 
 
-            select.appendChild(option);
-
-        });
-
-    }
-
-
-    /*
-        KONVERTATSIYA
-    */
-
-    function convertCurrency() {
-
-        const amount =
-            Number(
-                document.getElementById(
-                    "amount"
-                ).value
-            ) || 0;
-
-
-        const code =
-            document.getElementById(
-                "currencySelect"
-            ).value;
-
-
-        const currency =
-            currencies.find(
-                item =>
-                    item.code === code
+            fromCurrency.appendChild(
+                option
             );
-
-
-        const result =
-            document.getElementById(
-                "convertResult"
-            );
-
-
-        if (!currency) {
-
-            result.textContent =
-                "Kurs ma'lumotlari yuklanmoqda...";
-
-            return;
 
         }
+    );
 
 
-        /*
-            Markaziy bankda ba'zi valyutalar
-            1 emas, masalan 100 birlik
-            ko‘rinishida berilishi mumkin.
 
-            Shuning uchun:
-            Rate / Nominal
-        */
-
-        const oneUnit =
-            currency.rate /
-            currency.nominal;
+    toCurrency.innerHTML =
+        "";
 
 
-        const sum =
-            amount * oneUnit;
+    const uzsTo =
+        document.createElement(
+            "option"
+        );
 
 
-        result.innerHTML = `
+    uzsTo.value =
+        "UZS";
 
-            ${formatNumber(amount)}
-            ${currency.code}
 
-            =
-            <strong>
-                ${formatNumber(sum)}
-            </strong>
+    uzsTo.textContent =
+        "UZS — O‘zbekiston so‘mi";
 
-            so‘m
 
-        `;
+    toCurrency.appendChild(
+        uzsTo
+    );
+
+
+    currencies.forEach(
+        currency => {
+
+            const option =
+                document.createElement(
+                    "option"
+                );
+
+
+            option.value =
+                currency.code;
+
+
+            option.textContent =
+                `${currency.code} — ${currency.name}`;
+
+
+            toCurrency.appendChild(
+                option
+            );
+
+        }
+    );
+
+
+
+    if (
+        [...fromCurrency.options]
+        .some(
+            option =>
+                option.value ===
+                currentFrom
+        )
+    ) {
+
+        fromCurrency.value =
+            currentFrom;
+
+    } else {
+
+        fromCurrency.value =
+            "USD";
 
     }
 
 
-    /*
-        VALYUTA JADVALI
-    */
 
-    function renderCurrencies() {
+    if (
+        [...toCurrency.options]
+        .some(
+            option =>
+                option.value ===
+                currentTo
+        )
+    ) {
 
-        const table =
-            document.getElementById(
-                "currencyTable"
-            );
+        toCurrency.value =
+            currentTo;
+
+    } else {
+
+        toCurrency.value =
+            "UZS";
+
+    }
+
+}
 
 
-        const search =
-            document.getElementById(
-                "search"
-            ).value
-            .toLowerCase()
-            .trim();
+
+/* =========================
+   VALYUTA KARTALARI
+========================== */
 
 
-        const filtered =
-            currencies.filter(item => {
+function renderCurrencies(
+    search = ""
+) {
+
+
+    const query =
+        search
+        .trim()
+        .toLowerCase();
+
+
+    let filtered =
+        currencies.filter(
+            currency => {
 
                 return (
 
-                    item.code
-                        .toLowerCase()
-                        .includes(search)
+                    currency.code
+                    .toLowerCase()
+                    .includes(query)
 
                     ||
 
-                    item.name
-                        .toLowerCase()
-                        .includes(search)
+                    currency.name
+                    .toLowerCase()
+                    .includes(query)
 
                 );
 
-            });
+            }
+        );
 
 
-        if (filtered.length === 0) {
+    if (
+        filtered.length === 0
+    ) {
 
-            table.innerHTML = `
+        currencyContainer.innerHTML = `
 
-                <tr>
+            <div
+                class="empty"
+                style="grid-column:1/-1;"
+            >
 
-                    <td
-                        colspan="6"
-                        class="loading-table">
+                🔎
 
-                        🔎 Valyuta topilmadi.
+                <h3
+                    style="margin-top:10px;"
+                >
+                    Valyuta topilmadi
+                </h3>
 
-                    </td>
+                <p
+                    style="margin-top:7px;"
+                >
+                    Boshqa nom yoki kod bilan
+                    qidirib ko‘ring.
+                </p>
 
-                </tr>
+            </div>
 
-            `;
+        `;
 
-            return;
-
-        }
-
-
-        table.innerHTML =
-            filtered.map(item => {
-
-
-                const oneUnit =
-                    item.rate /
-                    item.nominal;
-
-
-                let changeClass =
-                    "same";
-
-
-                let changeIcon =
-                    "—";
-
-
-                let statusText =
-                    "O‘zgarmagan";
-
-
-                if (item.diff > 0) {
-
-                    changeClass =
-                        "up";
-
-                    changeIcon =
-                        "▲";
-
-                    statusText =
-                        "Oshgan";
-
-                }
-
-
-                if (item.diff < 0) {
-
-                    changeClass =
-                        "down";
-
-                    changeIcon =
-                        "▼";
-
-                    statusText =
-                        "Tushgan";
-
-                }
-
-
-                return `
-
-                    <tr>
-
-                        <td>
-
-                            <span
-                                class="currency-code">
-
-                                ${item.code}
-
-                            </span>
-
-                        </td>
-
-
-                        <td>
-
-                            <span
-                                class="currency-name">
-
-                                ${item.name}
-
-                            </span>
-
-                        </td>
-
-
-                        <td>
-
-                            ${item.nominal}
-
-                        </td>
-
-
-                        <td>
-
-                            <span
-                                class="rate">
-
-                                ${formatNumber(oneUnit)}
-
-                                UZS
-
-                            </span>
-
-                        </td>
-
-
-                        <td>
-
-                            <span
-                                class="${changeClass}">
-
-                                ${changeIcon}
-
-                                ${formatNumber(
-                                    Math.abs(item.diff)
-                                )}
-
-                            </span>
-
-                        </td>
-
-
-                        <td>
-
-                            <span
-                                class="${changeClass}">
-
-                                ${statusText}
-
-                            </span>
-
-                        </td>
-
-                    </tr>
-
-                `;
-
-            }).join("");
+        return;
 
     }
 
 
-    /*
-        DARK MODE
-    */
 
-    function toggleTheme() {
+    /* SEVIMLILARNI TEPAGA */
+
+    filtered.sort(
+        (a,b) => {
+
+            const aFav =
+                favorites.includes(
+                    a.code
+                );
+
+
+            const bFav =
+                favorites.includes(
+                    b.code
+                );
+
+
+            if (
+                aFav &&
+                !bFav
+            ) return -1;
+
+
+            if (
+                !aFav &&
+                bFav
+            ) return 1;
+
+
+            return a.code.localeCompare(
+                b.code
+            );
+
+        }
+    );
+
+
+
+    currencyContainer.innerHTML =
+        filtered
+        .map(
+            currency =>
+                createCurrencyCard(
+                    currency
+                )
+        )
+        .join("");
+
+}
+
+
+
+/* =========================
+   KARTA
+========================== */
+
+
+function createCurrencyCard(
+    currency
+) {
+
+
+    const change =
+        currency.diff;
+
+
+    let changeClass =
+        "zero";
+
+
+    let changeIcon =
+        "—";
+
+
+    if (
+        change > 0
+    ) {
+
+        changeClass =
+            "up";
+
+        changeIcon =
+            "▲";
+
+    }
+
+
+    else if (
+        change < 0
+    ) {
+
+        changeClass =
+            "down";
+
+        changeIcon =
+            "▼";
+
+    }
+
+
+
+    const favorite =
+        favorites.includes(
+            currency.code
+        );
+
+
+    const favoriteIcon =
+        favorite
+        ? "★"
+        : "☆";
+
+
+
+    return `
+
+        <article
+            class="currency-card"
+        >
+
+
+            <div
+                class="currency-top"
+            >
+
+
+                <div
+                    class="currency-info"
+                >
+
+                    <div
+                        class="currency-flag"
+                    >
+                        ${
+                            flags[
+                                currency.code
+                            ] || "💱"
+                        }
+                    </div>
+
+
+                    <div>
+
+                        <div
+                            class="currency-code"
+                        >
+                            ${currency.code}
+                        </div>
+
+
+                        <div
+                            class="currency-name"
+                        >
+                            ${currency.name}
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <button
+                    class="favorite ${
+                        favorite
+                        ? "active"
+                        : ""
+                    }"
+                    onclick="toggleFavorite('${currency.code}')"
+                    title="Sevimlilarga qo‘shish"
+                >
+
+                    ${favoriteIcon}
+
+                </button>
+
+
+            </div>
+
+
+
+            <div
+                class="rate"
+            >
+
+                ${
+                    formatNumber(
+                        currency.rate,
+                        2
+                    )
+                }
+
+                UZS
+
+            </div>
+
+
+
+            <div
+                class="rate-label"
+            >
+
+                ${
+                    currency.nominal
+                }
+
+                ${
+                    currency.code
+                }
+
+                uchun
+
+            </div>
+
+
+
+            <div
+                class="change ${changeClass}"
+            >
+
+                ${changeIcon}
+
+                ${
+                    change > 0
+                    ? "+"
+                    : ""
+                }
+
+                ${
+                    formatNumber(
+                        change,
+                        2
+                    )
+                }
+
+                UZS
+
+            </div>
+
+
+
+            <div
+                class="card-footer"
+            >
+
+                Kurs sanasi:
+                ${
+                    currency.date ||
+                    "—"
+                }
+
+            </div>
+
+
+        </article>
+
+    `;
+
+}
+
+
+
+/* =========================
+   FAVORITES
+========================== */
+
+
+function toggleFavorite(
+    code
+) {
+
+
+    if (
+        favorites.includes(
+            code
+        )
+    ) {
+
+        favorites =
+            favorites.filter(
+                item =>
+                    item !== code
+            );
+
+    }
+
+    else {
+
+        favorites.push(
+            code
+        );
+
+    }
+
+
+    localStorage.setItem(
+        "valyutaFavorites",
+        JSON.stringify(
+            favorites
+        )
+    );
+
+
+    renderCurrencies(
+        searchInput.value
+    );
+
+}
+
+
+
+/* =========================
+   STATISTIKA
+========================== */
+
+
+function updateStatistics() {
+
+
+    const total =
+        currencies.length;
+
+
+    const up =
+        currencies.filter(
+            currency =>
+                currency.diff > 0
+        ).length;
+
+
+    const down =
+        currencies.filter(
+            currency =>
+                currency.diff < 0
+        ).length;
+
+
+    document.getElementById(
+        "totalCurrencies"
+    ).textContent =
+        total;
+
+
+    document.getElementById(
+        "upCount"
+    ).textContent =
+        up;
+
+
+    document.getElementById(
+        "downCount"
+    ).textContent =
+        down;
+
+}
+
+
+
+/* =========================
+   KURSNI TOPISH
+========================== */
+
+
+function getRate(
+    code
+) {
+
+
+    if (
+        code === "UZS"
+    ) {
+
+        return 1;
+
+    }
+
+
+    const currency =
+        currencies.find(
+            item =>
+                item.code ===
+                code
+        );
+
+
+    if (
+        !currency
+    ) {
+
+        return null;
+
+    }
+
+
+    return (
+        currency.rate /
+        currency.nominal
+    );
+
+}
+
+
+
+/* =========================
+   KONVERTOR
+========================== */
+
+
+function calculateConversion() {
+
+
+    if (
+        currencies.length === 0
+    ) {
+
+        return;
+
+    }
+
+
+    const amount =
+        Number(
+            amountInput.value
+        ) || 0;
+
+
+    const from =
+        fromCurrency.value;
+
+
+    const to =
+        toCurrency.value;
+
+
+    const fromRate =
+        getRate(
+            from
+        );
+
+
+    const toRate =
+        getRate(
+            to
+        );
+
+
+    if (
+        fromRate === null ||
+        toRate === null
+    ) {
+
+        conversionResult.textContent =
+            "—";
+
+        return;
+
+    }
+
+
+    const uzs =
+        amount *
+        fromRate;
+
+
+    const result =
+        uzs /
+        toRate;
+
+
+    conversionText.textContent =
+        `${formatNumber(
+            amount,
+            4
+        )} ${from} =`;
+
+
+    conversionResult.textContent =
+        `${formatNumber(
+            result,
+            4
+        )} ${to}`;
+
+}
+
+
+
+/* =========================
+   SWAP
+========================== */
+
+
+document
+    .getElementById(
+        "swapButton"
+    )
+    .addEventListener(
+        "click",
+        () => {
+
+
+            const oldFrom =
+                fromCurrency.value;
+
+
+            fromCurrency.value =
+                toCurrency.value;
+
+
+            toCurrency.value =
+                oldFrom;
+
+
+            calculateConversion();
+
+        }
+    );
+
+
+
+/* =========================
+   EVENTLAR
+========================== */
+
+
+amountInput.addEventListener(
+    "input",
+    calculateConversion
+);
+
+
+fromCurrency.addEventListener(
+    "change",
+    calculateConversion
+);
+
+
+toCurrency.addEventListener(
+    "change",
+    calculateConversion
+);
+
+
+searchInput.addEventListener(
+    "input",
+    () => {
+
+        renderCurrencies(
+            searchInput.value
+        );
+
+    }
+);
+
+
+refreshButton.addEventListener(
+    "click",
+    () => {
+
+        loadCurrencies();
+
+    }
+);
+
+
+
+/* =========================
+   DARK MODE
+========================== */
+
+
+const themeButton =
+    document.getElementById(
+        "themeButton"
+    );
+
+
+const savedTheme =
+    localStorage.getItem(
+        "valyutaTheme"
+    );
+
+
+if (
+    savedTheme === "dark"
+) {
+
+    document.body.classList.add(
+        "dark"
+    );
+
+    themeButton.textContent =
+        "☀️";
+
+}
+
+
+themeButton.addEventListener(
+    "click",
+    () => {
+
 
         document.body.classList.toggle(
             "dark"
         );
 
 
-        const isDark =
+        const dark =
             document.body.classList.contains(
                 "dark"
             );
 
 
-        document.getElementById(
-            "themeButton"
-        ).textContent =
-            isDark ? "☀️" : "🌙";
-
-
         localStorage.setItem(
-            "valyutauz-theme",
-            isDark ? "dark" : "light"
+            "valyutaTheme",
+            dark
+            ? "dark"
+            : "light"
         );
+
+
+        themeButton.textContent =
+            dark
+            ? "☀️"
+            : "🌙";
 
     }
+);
 
 
-    /*
-        OLDINGI TANLANGAN MAVZUNI SAQLASH
-    */
 
-    const savedTheme =
-        localStorage.getItem(
-            "valyutauz-theme"
-        );
+/* =========================
+   AVTOMATIK YANGILASH
+========================== */
 
 
-    if (savedTheme === "dark") {
-
-        document.body.classList.add(
-            "dark"
-        );
-
-        document.getElementById(
-            "themeButton"
-        ).textContent = "☀️";
-
-    }
+/*
+   Har 30 daqiqada kurslarni
+   avtomatik yangilaymiz.
+*/
 
 
-    /*
-        SAYTNI ISHGA TUSHIRISH
-    */
+setInterval(
+    loadCurrencies,
+    30 * 60 * 1000
+);
 
-    loadCurrencies();
+
+
+/* =========================
+   BOSHLASH
+========================== */
+
+
+loadCurrencies();
+
 
 </script>
+
 
 </body>
 </html>
