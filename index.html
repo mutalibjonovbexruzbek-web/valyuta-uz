@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ValyutaUZ — Valyuta kurslari</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #172033;
+        }
+
+        header {
+            background: #ffffff;
+            border-bottom: 1px solid #e5e9f0;
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            color: #1769e0;
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #4b5563;
+            font-size: 15px;
+        }
+
+        nav a:hover {
+            color: #1769e0;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 70px 20px 45px;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            color: #667085;
+            font-size: 17px;
+        }
+
+        .container {
+            width: 86%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .converter {
+            background: white;
+            padding: 25px;
+            border-radius: 18px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+            margin-bottom: 35px;
+        }
+
+        .converter h2 {
+            margin-bottom: 20px;
+        }
+
+        .converter-box {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #d9dee8;
+            border-radius: 10px;
+            font-size: 16px;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #1769e0;
+        }
+
+        .rates {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+            margin-bottom: 50px;
+        }
+
+        .card {
+            background: white;
+            padding: 22px;
+            border-radius: 16px;
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.05);
+        }
+
+        .currency {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .name {
+            color: #7a8494;
+            margin: 6px 0 15px;
+        }
+
+        .price {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .up {
+            color: #16a34a;
+            margin-top: 8px;
+        }
+
+        .down {
+            color: #dc2626;
+            margin-top: 8px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: #172033;
+            color: white;
+        }
+
+        @media (max-width: 800px) {
+            .rates {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .converter-box {
+                flex-direction: column;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .rates {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">💱 ValyutaUZ</div>
+
+    <nav>
+        <a href="#">Bosh sahifa</a>
+        <a href="#">Valyutalar</a>
+        <a href="#">Grafiklar</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>Dunyo valyutalari kurslari</h1>
+    <p>Barcha asosiy valyutalarni O‘zbekiston so‘mida kuzating</p>
+</section>
+
+<main class="container">
+
+    <section class="converter">
+        <h2>💱 Valyuta konvertori</h2>
+
+        <div class="converter-box">
+
+            <input
+                type="number"
+                id="amount"
+                value="1"
+                min="0"
+                placeholder="Miqdor"
+            >
+
+            <select id="currency">
+                <option value="USD">🇺🇸 USD — AQSh dollari</option>
+                <option value="EUR">🇪🇺 EUR — Yevro</option>
+                <option value="GBP">🇬🇧 GBP — Funt sterling</option>
+                <option value="RUB">🇷🇺 RUB — Rossiya rubli</option>
+            </select>
+
+        </div>
+
+        <div class="result" id="result">
+            1 USD = 12 500 UZS
+        </div>
+    </section>
+
+    <h2 style="margin-bottom: 20px;">📊 Bugungi valyuta kurslari</h2>
+
+    <section class="rates">
+
+        <div class="card">
+            <div class="currency">🇺🇸 USD</div>
+            <div class="name">AQSh dollari</div>
+            <div class="price">12 500 UZS</div>
+            <div class="up">▲ +0.42%</div>
+        </div>
+
+        <div class="card">
+            <div class="currency">🇪🇺 EUR</div>
+            <div class="name">Yevro</div>
+            <div class="price">14 600 UZS</div>
+            <div class="down">▼ -0.18%</div>
+        </div>
+
+        <div class="card">
+            <div class="currency">🇬🇧 GBP</div>
+            <div class="name">Funt sterling</div>
+            <div class="price">16 900 UZS</div>
+            <div class="up">▲ +0.73%</div>
+        </div>
+
+        <div class="card">
+            <div class="currency">🇷🇺 RUB</div>
+            <div class="name">Rossiya rubli</div>
+            <div class="price">145 UZS</div>
+            <div class="down">▼ -0.31%</div>
+        </div>
+
+    </section>
+
+</main>
+
+<footer>
+    <p>© 2026 ValyutaUZ — Valyuta kurslari</p>
+    <p style="margin-top: 8px;">Ma'lumotlar rasmiy manbalar asosida yangilanadi.</p>
+</footer>
+
+<script>
+    const rates = {
+        USD: 12500,
+        EUR: 14600,
+        GBP: 16900,
+        RUB: 145
+    };
+
+    const amount = document.getElementById("amount");
+    const currency = document.getElementById("currency");
+    const result = document.getElementById("result");
+
+    function convert() {
+        const value = Number(amount.value) || 0;
+        const selectedCurrency = currency.value;
+        const sum = value * rates[selectedCurrency];
+
+        result.textContent =
+            `${value} ${selectedCurrency} = ${sum.toLocaleString("uz-UZ")} UZS`;
+    }
+
+    amount.addEventListener("input", convert);
+    currency.addEventListener("change", convert);
+</script>
+
+</body>
+</html>
